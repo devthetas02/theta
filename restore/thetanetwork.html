@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<!--  -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="logo192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Theta Network</title>
+    <script src="./thetanetwork_files/main.f81ad271.js"></script>
+    <link href="./thetanetwork_files/main.49e394ce.css" rel="stylesheet">
+    <style type="text/css">
+        .marquee-container {
+            overflow-x: hidden !important;
+            display: flex !important;
+            flex-direction: row !important;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee-container:hover div {
+            animation-play-state: var(--pause-on-hover);
+        }
+
+        .marquee-container:active div {
+            animation-play-state: var(--pause-on-click);
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .overlay::before,
+        .overlay::after {
+            background: linear-gradient(to right, var(--gradient-color));
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: var(--gradient-width);
+            z-index: 2;
+        }
+
+        .overlay::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .overlay::before {
+            left: 0;
+            top: 0;
+        }
+
+        .marquee {
+            flex: 0 0 auto;
+            min-width: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+            animation-play-state: var(--play);
+            animation-delay: var(--delay);
+            animation-direction: var(--direction);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    <style type="text/css">
+        :root topadblock,
+        :root span[id^="ezoic-pub-ad-placeholder-"],
+        :root mq-programmatic-ad,
+        :root iframe[src^="http://www.adpeepshosted.com/adpeeps.php?"],
+        :root div[id^="traffective-ad-"],
+        :root div[id^="taboola-stream-"],
+        :root div[id^="sticky_ad_"],
+        :root div[id^="rc-widget-"],
+        :root div[id^="proadszone-"],
+        :root div[id^="lazyad-"],
+        :root div[id^="js-dfp-"],
+        :root div[id^="gtm-ad-"],
+        :root div[id^="google_dfp_"],
+        :root div[id^="ezoic-pub-ad-"],
+        :root div[id^="div-adtech-ad-"],
+        :root div[id^="dfp-slot-"],
+        :root div[id^="dfp-ad-"],
+        :root div[id^="banner-ad-"],
+        :root div[id^="advt-"],
+        :root div[id^="advads_"],
+        :root div[id^="advads-"],
+        :root div[id^="adspot-"],
+        :root div[id^="ads300_100-widget-"],
+        :root div[id^="ads250_250-widget-"],
+        :root div[id^="adrotate_widgets-"],
+        :root div[id^="adngin-"],
+        :root div[id^="adfox_"],
+        :root div[id^="ad_script_"],
+        :root div[id^="ad_rect_"],
+        :root div[id^="ad_position_"],
+        :root div[id^="ad-server-"],
+        :root div[id^="ad-inserter-"],
+        :root div[id^="ad-cid-"],
+        :root div[id^="_vdo_ads_player_ai_"],
+        :root div[data-test-id="AdDisplayWrapper"],
+        :root div[data-subscript="Advertising"],
+        :root div[data-spotim-slot],
+        :root div[data-role="sidebarAd"],
+        :root div[data-native_ad],
+        :root div[data-mediatype="advertising"],
+        :root div[data-insertion],
+        :root div[data-id-advertdfpconf],
+        :root div[data-dfp-id],
+        :root div[data-content="Advertisement"],
+        :root div[data-alias="300x250 Ad 2"],
+        :root div[data-alias="300x250 Ad 1"],
+        :root div[data-adunit],
+        :root div[data-adunit-path],
+        :root div[data-before-content="advertisement"],
+        :root div[data-adservice-param-tagid="contentad"],
+        :root div[data-adname],
+        :root div[data-ad-wrapper],
+        :root div[data-ad-underplayer],
+        :root div[data-ad-placeholder],
+        :root div[class^="sp-adslot-"],
+        :root div[class^="s-dfp-"],
+        :root div[class^="proadszone-"],
+        :root div[class^="pane-google-admanager-"],
+        :root div[class^="native-ad-"],
+        :root div[class^="lifeOnwerAd"],
+        :root div[class^="largeRectangleAd_"],
+        :root div[class^="kiwiad-popup"],
+        :root div[class^="kiwiad-desktop"],
+        :root div[class^="index_adBeforeContent_"],
+        :root div[class^="index_adAfterContent_"],
+        :root div[class^="index__adWrapper"],
+        :root div[class^="block-openx-"],
+        :root div[class^="backfill-taboola-home-slot-"],
+        :root div[class^="articleAdUnitMPU_"],
+        :root div[class^="advertisement-desktop"],
+        :root div[class^="adunit_"],
+        :root div[class^="adsbutt_wrapper_"],
+        :root div[class^="ads-partner-"],
+        :root div[class^="adpubs-"],
+        :root div[class^="adbanner_"],
+        :root div[class^="ad_position_"],
+        :root div[class^="SponsoredAds"],
+        :root div[class^="ResponsiveAd-"],
+        :root div[class^="PreAd_"],
+        :root div[class^="Display_displayAd"],
+        :root div[class^="Directory__footerAds"],
+        :root div[class^="Component-dfp-"],
+        :root div[class^="BlockAdvert-"],
+        :root div[class^="BannerAd_"],
+        :root div[class^="AdhesionAd_"],
+        :root div[class^="Ad__bigBox"],
+        :root div[class^="Ad__adContainer"],
+        :root div[class^="AdSlot__container"],
+        :root div[class^="ad_border_"],
+        :root div[class^="AdItem-"],
+        :root div[class^="AdEmbeded__AddWrapper"],
+        :root span[data-component-type="s-ads-metrics"],
+        :root div[class^="AdBannerWrapper-"],
+        :root div[id^="code_ads_"],
+        :root div.fadeInDown[id$="____equal"][class$="____equal"],
+        :root display-ads,
+        :root display-ad-component,
+        :root bottomadblock,
+        :root aside[id^="tn_ads_widget-"],
+        :root aside[id^="adrotate_widgets-"],
+        :root app-large-ad,
+        :root amp-fx-flying-carpet,
+        :root amp-embed[type="taboola"],
+        :root aa[href^="https://itubego.com/video-downloader/?affid="],
+        :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"],
+        :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"],
+        :root a[href^="https://x.trafficandoffers.com/"],
+        :root a[href^="https://www.xvinlink.com/?a_fid="],
+        :root a[href^="https://www.what-sexdating.com/"],
+        :root a[href^="https://www.vfreecams.com/in/?track="],
+        :root a[href^="https://www.sweetdeals.com"],
+        :root a[href^="https://www.sugarinstant.com/?partner_id="],
+        :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="],
+        :root a[href^="https://www.share-online.biz/affiliate/"],
+        :root a[href^="https://www.securegfm.com/"],
+        :root a[href^="https://www.rcbopt.com:8080/offer/"]>img,
+        :root a[href^="https://www.rabbits.webcam/?id="],
+        :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"],
+        :root a[href^="https://www.privateinternetaccess.com/"]>img,
+        :root a[href^="https://www.passeura.com/"],
+        :root div[id^="amzn-assoc-ad"],
+        :root a[href^="https://www.oboom.com/ref/"],
+        :root a[href^="https://www.oboom.com/ad/"],
+        :root a[href^="https://www.nudeidols.com/cams/"],
+        :root a[href^="https://www.mypornstarcams.com/landing/click/"],
+        :root a[href^="https://www.mrskin.com/account/"],
+        :root a[href^="https://www.kingsoffetish.com/tour?partner_id="],
+        :root a[href^="https://www.jackery.com?aff="]>img,
+        :root div[data-adzone],
+        :root a[href^="https://www.iyalc.com/"],
+        :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"]+.ob_source,
+        :root a[href^="https://www.infowarsstore.com/"]>img,
+        :root div[id^="yandex_ad"],
+        :root a[href^="https://www.pornhat.com/"][rel="nofollow"],
+        :root a[href^="https://www.hotgirls4fuck.com/"],
+        :root a[href^="https://www.healthrangerstore.com/"]>img,
+        :root a[href^="https://www.get-express-vpn.com/offer/"],
+        :root a[href^="https://www.gambling-affiliation.com/cpc/"],
+        :root a[href^="https://www.dollps.com/?track="],
+        :root a[href^="https://www.clicktraceclick.com/"],
+        :root a[href^="https://www.chngtrack.com/"],
+        :root a[href^="https://www.camsoda.com/enter.php?id="],
+        :root a[href^="https://www.brazzersnetwork.com/landing/"],
+        :root a[href^="https://www.bebi.com"],
+        :root div[class^="pane-adsense-managed-"],
+        :root a[href^="https://www.bang.com/?aff="],
+        :root a[href^="https://www.awin1.com/cread.php?awinaffid="],
+        :root .card-captioned.crd>.crd--cnt>.s2nPlayer,
+        :root a[href^="https://www.arthrozene.com/"][href*="?tid="],
+        :root a[href^="https://www.adskeeper.co.uk/"],
+        :root a[href^="http://farm.plista.com/pets"],
+        :root a[href^="https://windscribe.com/promo/"],
+        :root [href^="/ucdownload.php"],
+        :root a[href^="https://wantopticalfreelance.com/"],
+        :root a[href^="https://easygamepromo.com/ef/custom_affiliate/"],
+        :root a[href^="https://tupitea.co/"],
+        :root a[href^="http://c43a3cd8f99413891.com/"],
+        :root a[href^="https://trust.zone/go/r.php?RID="],
+        :root div[data-ad-targeting],
+        :root a[href^="https://trk.moviesflix4k.xyz/"],
+        :root a[href^="https://trf.bannerator.com/"],
+        :root a[href^="https://bestcond1tions.com/"],
+        :root a[href^="http://go.247traffic.com/"],
+        :root a[href^="https://trappist-1d.com/"],
+        :root a[href^="https://tragency-clesburg.icu/"],
+        :root a[href^="https://tracking.gitads.io/"],
+        :root [href^="https://turtlebids.irauctions.com/"] img,
+        :root [href*="incentrev.com/"] img,
+        :root a[href^="https://tracking.avapartner.com/"],
+        :root a[href^="https://track.ultravpn.com/"],
+        :root a[href^="https://track.interactivegf.com/"],
+        :root a[href^="https://vlnk.me/"],
+        :root a[href^="https://www.adultempire.com/"][href*="?partner_id="],
+        :root a[href^="https://track.healthtrader.com/"],
+        :root a[href^="http://greensmoke.com/"],
+        :root a[href^="https://track.effiliation.com/servlet/effi.click?"]>img,
+        :root a[href^="https://track.clickmoi.xyz/"],
+        :root a[href^="https://track.afcpatrk.com/"],
+        :root a[href^="https://control.trafficfabrik.com/"],
+        :root a[href^="https://track.52zxzh.com/"],
+        :root a[href^="http://www.greenmangaming.com/?tap_a="],
+        :root a[href^="https://go.cmtaffiliates.com/"],
+        :root a[href^="https://tm-offers.gamingadult.com/"],
+        :root a[href^="https://t.hrtyj.com/"],
+        :root a[href^="https://t.adating.link/"],
+        :root a[href^="https://streamate.com/landing/click/"],
+        :root a[href^="https://squren.com/rotator/?atomid="],
+        :root div[id^="ad-div-"],
+        :root a[href^="https://secure.eveonline.com/ft/?aid="],
+        :root a[href^="https://secure.bstlnk.com/"],
+        :root div[class^="index_displayAd_"],
+        :root a[href^="http://adultgames.xxx/"],
+        :root a[href^="http://semi-cod.com/clicks/"],
+        :root a[href^="https://s.zlink2.com/"],
+        :root a[href^="https://someperceptionparade.com/"],
+        :root a[href^="https://refpasrasw.world/"],
+        :root div[data-google-query-id],
+        :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"],
+        :root a[href^="https://refpaexhil.top/"],
+        :root a[href^="https://reachtrgt.com/"],
+        :root a[href^="https://queersodadults.com/"],
+        :root AD-SLOT,
+        :root a[href^="https://pubads.g.doubleclick.net/"],
+        :root a[href^="https://prf.hn/click/"][href*="/camref:"]>img,
+        :root a[href^="http://www.my-dirty-hobby.com/?sub="],
+        :root a[href^="https://porndeals.com/?track="],
+        :root a[href^="https://pcm.bannerator.com/"],
+        :root a[href^="https://offerforge.net/"],
+        :root a[href^="https://track.wg-aff.com"],
+        :root a[href^="https://nutrientassumptionclaims.com/"],
+        :root a[href^="https://ndt5.net/"],
+        :root a[href^="https://natour.naughtyamerica.com/track/"],
+        :root a[href^="https://wittered-mainging.com/"],
+        :root a[href^="https://t.grtyi.com/"],
+        :root a[href^="https://myusenet.xyz/"],
+        :root a[href^="https://my-movie.club/"],
+        :root a[href^="https://msecure117.com/"],
+        :root [href^="https://detachedbates.com/"],
+        :root a[href^="https://mk-cdn.net/"],
+        :root a[href^="https://mk-ads.com/"],
+        :root a[href^="https://meet-sex-here.com/?u="],
+        :root a[href^="https://medleyads.com/"],
+        :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"],
+        :root a[href^="https://lead1.pl/"],
+        :root iframe[src^="https://tpc.googlesyndication.com/"],
+        :root a[href^="https://a.bestcontentoperation.top/"],
+        :root a[href^="https://landing1.brazzersnetwork.com"],
+        :root a[href^="https://refpazkjixes.top/"],
+        :root a[href^="http://adrunnr.com/"],
+        :root a[href^="https://landing.brazzersplus.com/"],
+        :root a[href^="https://land.rk.com/landing/"],
+        :root a[href^="http://ad.au.doubleclick.net/"],
+        :root a[href^="https://k2s.cc/pr/"],
+        :root a[href^="https://juicyads.in/"],
+        :root a[href^="https://join.virtuallust3d.com/"],
+        :root [href="https://ourgoldguy.com/contact/"] img,
+        :root a[href^="http://www.uniblue.com/cm/"],
+        :root a[href^="https://join.sexworld3d.com/track/"],
+        :root a[href^="https://join.dreamsexworld.com/"],
+        :root a[href^="https://trusted-click-host.com/"],
+        :root a[href^="https://members.linkifier.com/public/affiliateLanding?refCode="],
+        :root a[href^="https://jmp.awempire.com/"],
+        :root a[href^="https://intenseaffiliates.com/redirect/"],
+        :root [id^="ad_sky"],
+        :root [href^="http://join.shemalepornstar.com/"],
+        :root a[href^="https://incisivetrk.cvtr.io/click?"],
+        :root a[href^="https://iactrivago.ampxdirect.com/"],
+        :root a[href^="https://iac.ampxdirect.com/"],
+        :root a[href^="https://horny-pussies.com/tds"],
+        :root a[href^="http://feedads.g.doubleclick.net/"],
+        :root a[href^="https://redsittalvetoft.pro/"],
+        :root a[href^="https://googleads.g.doubleclick.net/pcs/click"],
+        :root a[href^="//thaudray.com/"],
+        :root a[href^="http://cdn.adstract.com/"],
+        :root a[href^="https://gogoman.me/"],
+        :root a[href^="https://graizoah.com/"],
+        :root a[href^="https://go.zybrdr.com"],
+        :root a[href^="https://go.xxxjmp.com"],
+        :root a[href^="https://go.xtbaffiliates.com/"],
+        :root a[href^="https://torrentsafeguard.com/?aid="],
+        :root [href^="https://v.investologic.co.uk/"],
+        :root a[href^="https://offers.refchamp.com/"],
+        :root a[href^="https://go.trkclick2.com/"],
+        :root a[href^="https://go.strpjmp.com/"],
+        :root a[href^="https://go.markets.com/visit/?bta="],
+        :root a[href^="https://landing.brazzersnetwork.com/"],
+        :root a[href^="https://go.hpyjmp.com/"],
+        :root a[href^="https://go.goasrv.com/"],
+        :root a[href^="https://adnetwrk.com/"],
+        :root a[href^="https://go.gldrdr.com/"],
+        :root a[href^="https://fleshlight.sjv.io/"],
+        :root a[href^="https://go.etoro.com/"]>img,
+        :root a[href^="https://go.currency.com/"],
+        :root a[href^="https://track.afftck.com/"],
+        :root a[href^="https://gohere.pl/"],
+        :root a[href^="http://guideways.info/"],
+        :root a[href^="https://go.cmrdr.com/"],
+        :root [href^="http://www.pingperfect.com/aff.php"],
+        :root a[href^="http://www.easydownloadnow.com/"],
+        :root a[href^="https://go.alxbgo.com/"],
+        :root a[href^="https://go.admjmp.com/"],
+        :root a[href^="https://go.ad2up.com/"],
+        :root a[href^="https://giftsale.co.uk/?utm_"],
+        :root a[href^="http://www.terraclicks.com/"],
+        :root a[href^="https://gghf.mobi/"],
+        :root a[href^="https://fonts.fontplace9.com/"],
+        :root a[href^="http://clkmon.com/adServe/"],
+        :root a[href^="https://flirtaescopa.com/"],
+        :root a[href^="https://fertilitycommand.com/"],
+        :root a[href^="https://axdsz.pro/"],
+        :root a[href^="https://tour.mrskin.com/"],
+        :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="],
+        :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="],
+        :root a[href^="https://fakelay.com/"],
+        :root a[href^="https://earandmarketing.com/"],
+        :root [lazy-ad="leftthin_banner"],
+        :root a[href^="https://dynamicadx.com/"],
+        :root div[id^="div-gpt-"],
+        :root a[href^="https://dooloust.net/"],
+        :root a[href^="https://tc.tradetracker.net/"]>img,
+        :root a[href^="//srv.buysellads.com/"],
+        :root a[href^="https://dianches-inchor.com/"],
+        :root a[href^="http://adf.ly/?id="],
+        :root a[href^="https://uncensored3d.com/"],
+        :root a[href^="https://creacdn.top-convert.com/"],
+        :root iframe[src^="https://pagead2.googlesyndication.com/"],
+        :root a[href^="https://retiremely.com/"],
+        :root a[href^="https://cpmspace.com/"],
+        :root [onclick*="content.ad/"],
+        :root a[href^="https://clixtrac.com/"],
+        :root a[href^="https://clicks.pipaffiliates.com/"],
+        :root .commercial-unit-mobile-top>.v7hl4d,
+        :root a[href^="https://click.plista.com/pets"],
+        :root a[href^="https://claring-loccelkin.com/"],
+        :root [data-d-ad-id],
+        :root a[href^="https://chaturbate.xyz/"],
+        :root a[href^="https://chaturbate.com/in/?track="],
+        :root a[href^="https://chaturbate.com/in/?tour="],
+        :root a[href^="https://go.xlviirdr.com"],
+        :root a[href^="https://chaturbate.com/affiliates/"],
+        :root #kt_player>a[target="_blank"],
+        :root a[href^="https://camfapr.com/landing/click/"],
+        :root a[href^="https://avtub.click/assets/link.php"],
+        :root a[href^="https://cagothie.net/"],
+        :root a[href^="https://burpee.xyz/"],
+        :root a[href^="https://mcdlks.com/"],
+        :root a[href^="https://bs.serving-sys.com"],
+        :root a[href^="https://blackorange.go2cloud.org/"],
+        :root [data-dynamic-ads],
+        :root a[href^="https://banners.livepartners.com/"],
+        :root a[href^="https://awptjmp.com/"],
+        :root a[href^="http://www.fleshlight.com/"],
+        :root a[href^="https://aweptjmp.com/"],
+        :root a[href^="https://awentw.com/"],
+        :root [href^="/ucdownloader.php"],
+        :root a[href^="https://awejmp.com/"],
+        :root a[href^="https://ausoafab.net/"],
+        :root a[href^="https://as.sexad.net/"],
+        :root a[href^="https://playuhd.host/"],
+        :root a[href^="https://as.conjectwatson.com/"],
+        :root ark-top-ad,
+        :root a[href^="http://bestorican.com/"],
+        :root [data-name="adaptiveConstructorAd"],
+        :root a[href^="https://galaxyroms.net/?scr="],
+        :root a[href^="https://albionsoftwares.com/"],
+        :root a[href^="https://www.mrskin.com/tour"],
+        :root a[href^="http://adserver.adtech.de/"],
+        :root a[href^="https://frameworkdeserve.com/"],
+        :root zeus-ad,
+        :root a[href^="https://aj1070.online/"],
+        :root a[href^="http://cdn3.adexprts.com/"],
+        :root a[href^="https://spygasm.com/track?"],
+        :root a[href^="https://agacelebir.com/"],
+        :root a[href^="https://geniusdexchange.com/"],
+        :root a[href^="//postlnk.com/"],
+        :root a[href^="https://affiliate.rusvpn.com/click.php?"],
+        :root [data-role="tile-ads-module"],
+        :root a[href^="https://affiliate.geekbuying.com/gkbaffiliate.php?"],
+        :root [href^="https://www.reimageplus.com/"],
+        :root a[href^="https://bongacams2.com/track?"],
+        :root a[href^="http://www.twinplan.com/AF_"],
+        :root a[href^="https://affcpatrk.com/"],
+        :root a[href^="https://adultfriendfinder.com/go/page/landing"],
+        :root a[href^="https://adswick.com/"],
+        :root ADS-RIGHT,
+        :root a[href^="https://tracking.trackcasino.co/"],
+        :root a[href^="https://adserver.adreactor.com/"],
+        :root a[href^="https://land.brazzersnetwork.com/landing/"],
+        :root a[href^="https://ads.leovegas.com/redirect.aspx?"],
+        :root a[href^="https://t.hrtye.com/"],
+        :root a[href^="https://ads.cdn.live/"],
+        :root a[href^="https://ads.betfair.com/redirect.aspx?"],
+        :root a[href^="https://refpaano.host/"],
+        :root a[href^="https://meet-to-fuck.com/tds"],
+        :root a[href^="https://adhealers.com/"],
+        :root a[href^="http://servicegetbook.net/"],
+        :root a[href^="https://bngpt.com/"],
+        :root a[href^="http://clickandjoinyourgirl.com/"],
+        :root a[href^="https://ad13.adfarm1.adition.com/"],
+        :root a[href^="https://ad.kubiccomps.icu/"],
+        :root a[href^="https://static.fleshlight.com/images/banners/"],
+        :root app-advertisement,
+        :root a[href^="https://ad.doubleclick.net/"],
+        :root a[href^="http://zevera.com/afi.html"],
+        :root a[href^="http://go.oclaserver.com/"],
+        :root a[href^="https://ad.atdmt.com/"],
+        :root div[id^="gpt_ad_"],
+        :root [href^="https://goldcometals.com/clk.trk"],
+        :root a[href^="https://cams.imagetwist.com/in/?track="],
+        :root .trc_rbox .syndicatedItem,
+        :root a[href^="https://a.bestcontentweb.top/"],
+        :root a[href^="https://aaucwbe.com/"],
+        :root a[href^="https://a.montangop.top/"],
+        :root a[href^="http://campaign.bharatmatrimony.com/track/"],
+        :root a[href^="https://a-ads.com/campaigns/"],
+        :root a[href^="https://syndication.exoclick.com/"],
+        :root .commercial-unit-mobile-top .jackpot-main-content-container>.UpgKEd+.nZZLFc>.vci,
+        :root a[href^="https://financeads.net/tc.php?"],
+        :root a[href^="https://a-ads.com/?partner="],
+        :root a[href^="http://hyperlinksecure.com/go/"],
+        :root a[href^="https://track.themadtrcker.com/"],
+        :root a[href^="https://bullads.net/get/"],
+        :root a[href^="http://down1oads.com/"],
+        :root a[href^="http://yads.zedo.com/"],
+        :root a[href^="https://ads.trafficpoizon.com/"],
+        :root div[class^="local-feed-banner-ads"],
+        :root a[href^="http://wxdownloadmanager.com/dl/"],
+        :root a[href^="http://www.webtrackerplus.com/"],
+        :root a[href^="http://www.usearchmedia.com/signup?"],
+        :root a[href^="https://twinrdsyn.com/"],
+        :root a[href^="http://www.torntv-downloader.com/"],
+        :root a[href^="http://www.tirerack.com/affiliates/"],
+        :root a[href^="http://www.text-link-ads.com/"],
+        :root a[href^="https://weedzy.co.uk/"][href*="&utm_"],
+        :root a[href^="http://chaturbate.com/affiliates/"],
+        :root a[href^="https://waisheph.com/"],
+        :root a[href^="http://www.streamtunerhd.com/signup?"],
+        :root a[href^="http://www.streamate.com/exports/"],
+        :root a[href^="https://ads-for-free.com/click.php?"],
+        :root a[href^="https://syndication.optimizesrv.com/"],
+        :root a[href^="http://www.socialsex.com/"],
+        :root a[href^="https://join.virtualtaboo.com/track/"],
+        :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"],
+        :root [href^="https://awbbjmp.com/"],
+        :root a[href^="http://www.sfippa.com/"],
+        :root a[href^="http://secure.signup-page.com/"],
+        :root a[href^="http://www.quick-torrent.com/download.html?aff"],
+        :root a[href^="http://www.plus500.com/?id="],
+        :root [href*=".zlinkm.com/"],
+        :root a[href^="http://www.pinkvisualgames.com/?revid="],
+        :root a[href^="https://trklvs.com/"],
+        :root a[href^="http://www.paddypower.com/?AFF_ID="],
+        :root a[href^="http://www.onwebcam.com/random?t_link="],
+        :root a[href^="http://www.onclickmega.com/jump/next.php?"],
+        :root a[href^="http://www.myfreepaysite.com/sfw.php?aid"],
+        :root a[href^="http://www.mrskin.com/tour"],
+        :root a[href^="http://bcntrack.com/"],
+        :root a[href^="http://www.securegfm.com/"],
+        :root a[href^="http://www.liversely.net/"],
+        :root a[href^="https://partners.fxoro.com/click.php?"],
+        :root a[href^="https://azpresearch.club/"],
+        :root a[href^="http://www.linkbucks.com/referral/"],
+        :root a[href^="http://www.idownloadplay.com/"],
+        :root a[href^="http://www.hitcpm.com/"],
+        :root a[href^="http://fusionads.net"],
+        :root a[href^="http://www.hibids10.com/"],
+        :root div[class^="awpcp-random-ads"],
+        :root a[href^="http://www.graboid.com/affiliates/"],
+        :root a[href^="http://www.getyourguide.com/?partner_id="],
+        :root a[href^="http://www.gamebookers.com/cgi-bin/intro.cgi?"],
+        :root a[href^="http://www.friendlyquacks.com/"],
+        :root a[href^="https://www.financeads.net/tc.php?"],
+        :root a[href^="http://www.friendlyduck.com/AF_"],
+        :root a[href^="http://www.firstload.com/affiliate/"],
+        :root a[href^="http://www.friendlyadvertisements.com/"],
+        :root a[href^="https://content.oneindia.com/www/delivery/"],
+        :root a[href^="http://www.fpcTraffic2.com/blind/in.cgi?"],
+        :root a[href^="http://www.fonts.com/BannerScript/"],
+        :root [href^="https://www.restoro.com/"],
+        :root a[href^="https://americafirstpolls.com/"],
+        :root a[href^="http://clickserv.sitescout.com/"],
+        :root a[href^="http://www.firstload.de/affiliate/"],
+        :root a[href^="http://go.seomojo.com/tracking202/"],
+        :root a[href^="http://www.downloadweb.org/"],
+        :root a[href^="http://www.download-provider.org/"],
+        :root a[href^="http://www.down1oads.com/"],
+        :root a[href^="https://scurewall.co/"],
+        :root a[href^="https://pb-track.com/"],
+        :root [href^="https://www.avantlink.com/click.php"] img,
+        :root a[href^="http://www.dealcent.com/register.php?affid="],
+        :root a[href^="https://click.a-ads.com/"],
+        :root a[href^="http://www.clkads.com/adServe/"],
+        :root a[href^="https://aff-ads.stickywilds.com/"],
+        :root a[href^="http://www.bitlord.me/share/"],
+        :root iframe[id^="google_ads_frame"],
+        :root a[href^="http://www.bluehost.com/track/"]>img,
+        :root a[href^="http://www.bet365.com/"][href*="affiliate="],
+        :root .grid>.container>#aside-promotion,
+        :root a[href^="http://www.babylon.com/welcome/index?affID"],
+        :root a[href^="https://fast-redirecting.com/"],
+        :root a[href^="https://bluedelivery.pro/"],
+        :root [href^="http://join.michelle-austin.com/"],
+        :root a[href^="http://www.sexgangsters.com/?pid="],
+        :root a[href^="http://www.amazon.co.uk/exec/obidos/external-search?"],
+        :root a[href^="http://www.afgr3.com/"],
+        :root a[href^="http://c.jumia.io/"],
+        :root a[href^="http://www.affiliates1128.com/processing/"],
+        :root a[href^="http://go.ad2up.com/"],
+        :root a[href^="https://badoinkvr.com/"],
+        :root a[href^="http://www.adxpansion.com"],
+        :root a[href^="https://prf.hn/click/"][href*="/creativeref:"]>img,
+        :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="],
+        :root a[href^="http://www.ragazzeinvendita.com/?rcid="],
+        :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"],
+        :root .plistaList>.itemLinkPET,
+        :root a[href^="http://www.adbrite.com/mb/commerce/purchase_form.php?"],
+        :root a[href^="http://www.FriendlyDuck.com/"],
+        :root a[href^="https://www.googleadservices.com/pagead/aclk?"],
+        :root a[href^="http://www.1clickdownloader.com/"],
+        :root a[href^="https://bongacams10.com/track?"],
+        :root a[href^="http://www.123-reg.co.uk/affiliate2.cgi"],
+        :root a[href^="http://wopertific.info/"],
+        :root a[href^="http://bodelen.com/"],
+        :root a[href^="http://wgpartner.com/"],
+        :root a[href^="http://web.adblade.com/"],
+        :root [href^="https://stvkr.com/"],
+        :root a[href^="http://engine.newsmaxfeednetwork.com/"],
+        :root a[href^="https://pl.premium4kflix.website/"],
+        :root a[href^="http://vo2.qrlsx.com/"],
+        :root a[href^="https://www.nutaku.net/signup/landing/"],
+        :root a[href^="http://s9kkremkr0.com/"],
+        :root aside[id^="advads_ad_widget-"],
+        :root a[href^="http://lp.ezdownloadpro.info/"],
+        :root a[href^="http://uploaded.net/ref/"],
+        :root a[href^="http://www.mysuperpharm.com/"],
+        :root a[href^="http://www.freefilesdownloader.com/"],
+        :root a[href^="http://ul.to/ref/"],
+        :root a[href^="//chrif8kdstie.com/"],
+        :root a[href^="https://traffdaq.com/"],
+        :root a[href^="http://ucam.xxx/?utm_"],
+        :root a[href^="http://traffic.tc-clicks.com/"],
+        :root a[href^="https://dediseedbox.com/clients/aff.php?"],
+        :root [href^="/ucmini.php"],
+        :root a[href^="http://www.wantstraffic.com/"],
+        :root [href^="https://trackfin.asia/"],
+        :root a[href^="http://databass.info/"],
+        :root a[href^="http://track.afcpatrk.com/"],
+        :root div[class^="Ad__container"],
+        :root a[href^="http://adprovider.adlure.net/"],
+        :root a[href^="http://t.wowtrk.com/"],
+        :root a[href^="http://tezfiles.com/pr/"],
+        :root a[href^="http://tracking.deltamediallc.com/"],
+        :root a[href^="http://tc.tradetracker.net/"]>img,
+        :root div[class^="adUnit_"],
+        :root a[href^="https://deliver.tf2www.com/"],
+        :root .ob_dual_right>.ob_ads_header~.odb_div,
+        :root a[href^="http://spygasm.com/track?"],
+        :root a[href^="http://sharesuper.info/"],
+        :root a[href^="https://awecrptjmp.com/"],
+        :root [data-ez-name],
+        :root a[href^="http://server.cpmstar.com/click.aspx?poolid="],
+        :root a[href^="http://see.kmisln.com/"],
+        :root a[href^="http://secure.hostgator.com/~affiliat/"],
+        :root a[href^="http://rs-stripe.wsj.com/stripe/redirect"],
+        :root a[href^="http://refpaano.host/"],
+        :root a[data-oburl^="http://paid.outbrain.com/network/redir?"],
+        :root a[href^="https://engine.phn.doublepimp.com/"],
+        :root a[href^="http://refpa.top/"],
+        :root a[href^="http://record.betsafe.com/"],
+        :root a[href^="https://iqbroker.com/"][href*="?aff="],
+        :root a[href*=".medgoodfood.com/"],
+        :root a[href^="http://buysellads.com/"],
+        :root a[href^="http://reallygoodlink.freehookupaffair.com/"],
+        :root a[href^="https://keep2share.cc/pr/"],
+        :root a[href^="http://pityhostngco2.xyz/"],
+        :root a[href^="http://adlev.neodatagroup.com/"],
+        :root a[href^="http://reallygoodlink.extremefreegames.com/"],
+        :root a[href^="https://bnsjb1ab1e.com/"],
+        :root a[href^="http://pwrads.net/"],
+        :root a[href^="http://promos.bwin.com/"],
+        :root a[href^="http://z1.zedo.com/"],
+        :root a[href^="http://pokershibes.com/index.php?ref="],
+        :root [id^="google_ads_iframe"],
+        :root a[href^="http://partners.etoro.com/"],
+        :root a[href^="http://searchtabnew.com/"],
+        :root [href^="https://istlnkcl.com/"],
+        :root div[id^="ad-gpt-"],
+        :root a[href^="http://pan.adraccoon.com?"],
+        :root a[href^="http://online.ladbrokes.com/promoRedirect?"],
+        :root a[href^="https://dltags.com/"],
+        :root a[href^="http://onclickads.net/"],
+        :root a[href^="http://mmo123.co/"],
+        :root a[href^="https://fileboom.me/pr/"],
+        :root a[href^="http://marketgid.com"],
+        :root a[href^="//pubads.g.doubleclick.net/"],
+        :root a[href^="http://lp.ncdownloader.com/"],
+        :root a[href^="https://moneynow.one/"],
+        :root a[href^="http://look.djfiln.com/"],
+        :root a[href^="http://keep2share.cc/pr/"],
+        :root a[href^="http://www.liutilities.com/"],
+        :root a[href^="http://www.dl-provider.com/search/"],
+        :root [href^="http://join.shemalesfromhell.com/"],
+        :root .pubexchange_module .pe-external,
+        :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"],
+        :root a[href^="http://join3.bannedsextapes.com/track/"],
+        :root a[href^="https://gamescarousel.com/"],
+        :root a[href^="http://istri.it/?"],
+        :root a[href^="http://mob1ledev1ces.com/"],
+        :root a[href^="http://www.fbooksluts.com/"],
+        :root a[href^="http://www.cdjapan.co.jp/aff/click.cgi/"],
+        :root a[href^="http://c.actiondesk.com/"],
+        :root [href^="https://www.mypatriotsupply.com/"]>img,
+        :root a[href^="http://intent.bingads.com/"],
+        :root a[href^="//voyeurhit.com/cs/"],
+        :root a[href^="http://hd-plugins.com/download/"],
+        :root [data-desktop-ad-id],
+        :root a[href^="https://look.utndln.com/"],
+        :root a[href^="http://googleads.g.doubleclick.net/pcs/click"],
+        :root a[href^="https://ovb.im/"],
+        :root a[href^="https://watchmygirlfriend.tv/"],
+        :root .nrelate .nr_partner,
+        :root a[href^="http://go.xtbaffiliates.com/"],
+        :root a[href^="https://dialling-abutory.com/"],
+        :root a[href^="https://oackoubs.com/"],
+        :root a[href^="http://install.securewebsiteaccess.com/"],
+        :root a[href^="http://www.revenuehits.com/"],
+        :root a[href^="http://go.mobisla.com/"],
+        :root a[href^="http://go.fpmarkets.com/"],
+        :root a[href^="http://findersocket.com/"],
+        :root a[href^="https://porngames.adult/?SID="],
+        :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"],
+        :root a[href^="//go.xlviiirdr.com"],
+        :root a[href*=".incontro-veloce.com/"],
+        :root a[href^="http://g1.v.fwmrm.net/ad/"],
+        :root a[href^="http://us.marketgid.com"],
+        :root a[href^="http://imads.integral-marketing.com/"],
+        :root a[href^="http://freesoftwarelive.com/"],
+        :root a[href^="http://adtrackone.eu/"],
+        :root span[title="Ads by Google"],
+        :root a[href^="http://finaljuyu.com/"],
+        :root a[href^="https://www.im88trk.com/"],
+        :root a[href^="http://ffxitrack.com/"],
+        :root a[href^="http://ethfw0370q.com/"],
+        :root [href^="http://go.cm-trk2.com/"],
+        :root a[href^="https://maymooth-stopic.com/"],
+        :root a[href^="https://tracking.comfortclick.eu/"],
+        :root [id^="bunyad_ads_"],
+        :root a[href^="http://elitefuckbook.com/"],
+        :root a[href^="http://earandmarketing.com/"],
+        :root div[class^="hp-ad-rect-"],
+        :root a[href^="http://dwn.pushtraffic.net/"],
+        :root a[href^="http://deloplen.com/"],
+        :root a[href^="//edgar2al2larngpoer.com/"],
+        :root #content>#center>.dose>.dosesingle,
+        :root a[href^="http://d2.zedo.com/"],
+        :root a[href^="http://czotra-32.com/"],
+        :root a[href^="https://www.travelzoo.com/oascampaignclick/"],
+        :root a[href^="https://see.kmisln.com/"],
+        :root [href^="https://routewebtk.com/"],
+        :root a[href^="http://refer.webhostingbuzz.com/"],
+        :root a[href^="https://paid.outbrain.com/network/redir?"],
+        :root a[href^="http://www.downloadplayer1.com/"],
+        :root a[href^="http://clicks.binarypromos.com/"],
+        :root a[href^="http://webtrackerplus.com/"],
+        :root [id^="ad_slider"],
+        :root a[href^="https://track.bruceads.com/"],
+        :root a[href^="https://t.aslnk.link/"],
+        :root [href^="https://zstacklife.com/"] img,
+        :root a[href^="https://m.do.co/c/"]>img,
+        :root a[href^="http://track.trkvluum.com/"],
+        :root [href^="https://secure.bmtmicro.com/servlets/"],
+        :root a[href^="http://amzn.to/"]>img[src^="data"],
+        :root a[href^="http://bs.serving-sys.com/"],
+        :root a[href^="http://cpaway.afftrack.com/"],
+        :root a[href^="http://cdn.adsrvmedia.net/"],
+        :root [lazy-ad="top_banner"],
+        :root a[href^="http://360ads.go2cloud.org/"],
+        :root [href^="https://infinitytrk.com/"],
+        :root [onclick^="location.href='http://www.reimageplus.com"],
+        :root a[href^="http://dftrck.com/"],
+        :root a[href^="http://casino-x.com/?partner"],
+        :root a[href^="https://meet-sexhere.com/"],
+        :root a[href^="http://record.sportsbetaffiliates.com.au/"],
+        :root a[href^="http://campeeks.com/"][href*="&utm_"],
+        :root a[href^="http://download-performance.com/"],
+        :root a[href^="http://www.on2url.com/app/adtrack.asp"],
+        :root [href^="https://affect3dnetwork.com/track/"],
+        :root a[href^="http://campaign.bharatmatrimony.com/cbstrack/"],
+        :root a[href^="https://go.goaserv.com/"],
+        :root a[href^="http://serve.williamhill.com/promoRedirect?"],
+        :root a[href^="https://uncensored.game/"],
+        :root a[href^="http://www.seekbang.com/cs/"],
+        :root a[href^="http://syndication.exoclick.com/"],
+        :root a[href^="http://bluehost.com/track/"],
+        :root [href^="https://www.dcpodj3k5.com/"],
+        :root a[href^="https://serve.awmdelivery.com/"],
+        :root a[href^="http://enter.anabolic.com/track/"],
+        :root a[href^="https://prf.hn/click/"][href*="/adref:"]>img,
+        :root a[href^="http://banners.victor.com/processing/"],
+        :root a[href^="https://zononi.com/"],
+        :root a[href*="//lkstrck2.com/"],
+        :root div[aria-label="Ads"],
+        :root a[href^="https://go.ebrokerserve.com/"],
+        :root a[href^="http://axdsz.pro/"],
+        :root a[href^="http://api.content.ad/"],
+        :root a[href^="https://leg.xyz/?track="],
+        :root a[href^="http://affiliate.glbtracker.com/"],
+        :root a[href^="https://transfer.xe.com/signup/track/redirect?"],
+        :root a[href^="http://anonymous-net.com/"],
+        :root a[href^="http://hotcandyland.com/partner/"],
+        :root a[href^="https://www.popads.net/users/"],
+        :root a[href^="http://adultfriendfinder.com/p/register.cgi?pid="],
+        :root a[href^="http://www.advcashpro.com/aff/"],
+        :root a[href^="http://aflrm.com/"],
+        :root a[href^="http://affiliates.thrixxx.com/"],
+        :root #atvcap+#tvcap>.mnr-c>.commercial-unit-mobile-top,
+        :root a[href^="http://affiliates.lifeselector.com/"],
+        :root [class^="amp-ad-"],
+        :root a[href^="http://aff.ironsocket.com/"],
+        :root a[href^="http://tour.mrskin.com/"],
+        :root [href^="http://www.mypillow.com/"]>img,
+        :root a[href^="http://linksnappy.com/?ref="],
+        :root ad-desktop-sidebar,
+        :root [data-ad-width],
+        :root [id*="MGWrap"],
+        :root a[href^="http://adtrack123.pl/"],
+        :root a[href^="http://adsrv.keycaptcha.com"],
+        :root a[href^="http://adserving.unibet.com/"],
+        :root a[href^="https://secure.adnxs.com/clktrb?"],
+        :root div[data-mpu1],
+        :root a[href^="http://adserver.adtechus.com/"],
+        :root a[href^="http://galleries.securewebsiteaccess.com/"],
+        :root a[href^="http://stateresolver.link/"],
+        :root guj-ad,
+        :root AMP-AD,
+        :root a[href^="https://go.xxxiijmp.com"],
+        :root div[class^="StickyHeroAdWrapper-"],
+        :root a[href^="http://cwcams.com/landing/click/"],
+        :root a[href^="http://ads.betfair.com/redirect.aspx?"],
+        :root a[href^="http://adserver.adreactor.com/"],
+        :root a[href^="http://ads.sprintrade.com/"],
+        :root .section-subheader>.section-hotel-prices-header,
+        :root a[href^="http://landingpagegenius.com/"],
+        :root [href^="https://click2cvs.com/"],
+        :root a[href^="http://ads.expekt.com/affiliates/"],
+        :root a[href^="http://adclick.g.doubleclick.net/"],
+        :root a[href^="http://ad.yieldmanager.com/"],
+        :root [href^="http://homemoviestube.com/"],
+        :root a[href^="http://ad.doubleclick.net/"],
+        :root [href^="https://wct.link/"],
+        :root a[href^="https://track.totalav.com/"],
+        :root a[href^="http://ad-apac.doubleclick.net/"],
+        :root a[href^="http://1phads.com/"],
+        :root a[href^="http://s5prou7ulr.com/"],
+        :root a[href^="http://azmobilestore.co/"],
+        :root iframe[src^="http://ad.yieldmanager.com/"],
+        :root a[href^="https://porntubemate.com/"],
+        :root a[href^="http://pubads.g.doubleclick.net/"],
+        :root a[href^="//www.pd-news.com/"],
+        :root a[href^="https://topoffers.com/"][href*="/?pid="],
+        :root a[href^="https://syndication.dynsrvtbg.com/"],
+        :root a[href^="http://vinfdv6b4j.com/"],
+        :root div[data-test-id="AdBannerWrapper"],
+        :root div[class^="AdCard_"],
+        :root a[href^="http://www.urmediazone.com/signup"],
+        :root a[href^="http://click.plista.com/pets"],
+        :root [href^="http://www.fleshlightgirls.com/"],
+        :root a[href^="http://www.menaon.com/installs/"],
+        :root a[href^="//syndication.dynsrvtbg.com/"],
+        :root a[href^="http://srvpub.com/"],
+        :root a[href^="https://go.nordvpn.net/aff"]>img,
+        :root a[href^="http://secure.vivid.com/track/"],
+        :root a[href^="https://clickadilla.com/"],
+        :root a[href^="http://www.adskeeper.co.uk/"],
+        :root .ob_container .item-container-obpd,
+        :root a[href^="http://websitedhoome.com/"],
+        :root a[href^="http://see-work.info/"],
+        :root a[href^="https://www.friendlyduck.com/AF_"],
+        :root [href^="http://advertisesimple.info/"],
+        :root a[href^="http://www.pinkvisualpad.com/?revid="],
+        :root a[href^="https://www.oneclickroot.com/?tap_a="]>img,
+        :root DFP-AD,
+        :root a[href^="//porngames.adult/?SID="],
+        :root a[href^="https://go.hpyrdr.com/"],
+        :root a[href^="https://billing.purevpn.com/aff.php"]>img,
+        :root a[href^="//lambingsyddir.com/"],
+        :root a[href^="https://go.julrdr.com/"],
+        :root [id^="chp_ads_block"],
+        :root .trc_rbox_div .syndicatedItemUB,
+        :root [href^="https://totlnkcl.com/"],
+        :root a[href^="//agacelebir.com/"],
+        :root a[href^="http://play4k.co/"],
+        :root a[data-redirect^="https://paid.outbrain.com/network/redir?"],
+        :root a[href^="http://www.roboform.com/php/land.php"],
+        :root a[href="//rufflycouncil.com/"],
+        :root a[href^="http://xads.zedo.com/"],
+        :root a[href^="https://adsrv4k.com/"],
+        :root a[href^="http://trk.mdrtrck.com/"],
+        :root a[href*="https://www.sweetdeals.com/"] img,
+        :root a[href*=".zlink9.com/"],
+        :root a[href^="https://trackjs.com/?utm_source"],
+        :root AFS-AD,
+        :root a[href^="https://ads.ad4game.com/"],
+        :root a[href^="https://affiliates.bet-at-home.com/processing/"],
+        :root a[href^="https://betway.com/"][href*="&a="],
+        :root a[href^="http://www.mobileandinternetadvertising.com/"],
+        :root a[href^="http://www.downloadthesefiles.com/"],
+        :root a[href^="http://secure.cbdpure.com/aff/"],
+        :root [href^="https://join.playboyplus.com/track/"],
+        :root a[data-url^="http://paid.outbrain.com/network/redir?"]+.author,
+        :root a[href^="http://affiliates.score-affiliates.com/"],
+        :root a[data-oburl^="https://paid.outbrain.com/network/redir?"],
+        :root a[href^="https://ttf.trmobc.com/"],
+        :root a[href^="http://n.admagnet.net/"],
+        :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"],
+        :root a[href^="https://go.onclasrv.com/"],
+        :root a[href^="http://wct.link/"],
+        :root a[href^="http://www.TwinPlan.com/AF_"],
+        :root div[id^="ad-position-"],
+        :root a[href^="http://liversely.com/"],
+        :root a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"],
+        :root [href^="https://goldforyourfuture.com/clk.trk"] img,
+        :root [href="https://masstortfinancing.com"] img,
+        :root [href^="https://bulletprofitsmartlink.com/"],
+        :root [href^="https://join3.bannedsextapes.com"],
+        :root a[href^="//benoopto.com/"],
+        :root [lazy-ad="leftbottom_banner"],
+        :root [id^="div-gpt-ad"],
+        :root [data-m-ad-id],
+        :root a[href^="http://espn.zlbu.net/"],
+        :root a[href^="http://admrotate.iplayer.org/"],
+        :root [href^="http://join.rodneymoore.com/"],
+        :root [id*="MarketGid"],
+        :root a[href^="http://c.ketads.com/"],
+        :root a[href^="http://www.badoink.com/go.php?"],
+        :root .commercial-unit-mobile-top>div[data-pla="1"],
+        :root a[href^="https://secure.starsaffiliateclub.com/C.ashx?"],
+        :root [href^="https://zone.gotrackier.com/"],
+        :root a[href^="http://ad-emea.doubleclick.net/"],
+        :root div[class^="kiwi-ad-wrapper"],
+        :root a[href^="https://rev.adsession.com/"],
+        :root [href^="https://www.mystore.com/"]>img,
+        :root [href^="https://www.mypillow.com/"]>img,
+        :root [href^="https://www.herbanomic.com/"]>img,
+        :root [href^="https://freecourseweb.com/"]>.sitefriend,
+        :root [href^="https://www.hostg.xyz/aff_c"]>img,
+        :root [href*=".engine.adglare.net/"],
+        :root a[href^="http://allaptair.club/"],
+        :root a[href^="https://ptapjmp.com/"],
+        :root a[href^="http://xtgem.com/click?"],
+        :root a[href^="http://bc.vc/?r="],
+        :root [href^="https://www.brighteonstore.com/products/"] img,
+        :root a[href^="https://servedbyadbutler.com/"],
+        :root a[href^="https://www.bet365.com/"][href*="affiliate="],
+        :root a[href^="https://mob1ledev1ces.com/"],
+        :root a[href^="https://promo-bc.com/"],
+        :root a[data-redirect^="http://paid.outbrain.com/network/redir?"],
+        :root a[href^="https://explore.findanswersnow.net/"],
+        :root [id^="adframe_wrap_"],
+        :root div[jsdata*="CarouselPLA-"][data-id^="CarouselPLA-"],
+        :root a[href^="https://go.trackitalltheway.com/"],
+        :root [data-template-type="nativead"],
+        :root [href^="https://track.fiverr.com/visit/"]>img,
+        :root a[href^="//eurogirls.live/track?"],
+        :root a[href^="http://affiliate.coral.co.uk/processing/"],
+        :root [href^="https://t.ajrkm.link/"],
+        :root [data-ad-manager-id],
+        :root a[href^="http://www.firstclass-download.com/"],
+        :root [id*="ScriptRoot"],
+        :root a[href^="http://fileboom.me/pr/"],
+        :root a[href^="//coarsewary.com/"],
+        :root [href^="https://mystore.com/"]>img,
+        :root a[href*=".trust.zone"],
+        :root [href^="http://globsads.com/"],
+        :root [href^="https://shrugartisticelder.com"],
+        :root a[href^="https://traffic.bannerator.com/"],
+        :root [href^="https://shiftnetwork.infusionsoft.com/go/"]>img,
+        :root a[href^="https://vo2.qrlsx.com/"],
+        :root a[href^="https://tracking.truthfinder.com/?a="],
+        :root .scroll-fixable.rail-right>.deals-rail,
+        :root a[href*=".flndmyiove.net/"],
+        :root a[href^="http://www.xmediaserve.com/"],
+        :root [href^="https://mypatriotsupply.com/"]>img,
+        :root [href^="https://mylead.global/stl/"]>img,
+        :root a[href^="http://affiliates.pinnaclesports.com/processing/"],
+        :root .vid-present>.van_vid_carousel__padding,
+        :root #header+#content>#left>#rlblock_left,
+        :root [href^="https://ilovemyfreedoms.com/landing-"],
+        :root a[href^="https://5hjdbfjfd5.monster/"],
+        :root [href^="http://join.ts-dominopresley.com/"],
+        :root [href^="https://go.affiliatexe.com/"],
+        :root [href^="https://go.4rabettraff.com/"],
+        :root a[href^="https://a.bestcontentfood.top/"],
+        :root #ads>.dose>.dosesingle,
+        :root a[data-url^="http://paid.outbrain.com/network/redir?"],
+        :root [href^="https://cpa.10kfreesilver.com/"],
+        :root a[href^="https://delivery.porn.com/"],
+        :root a[href^="https://www.firstload.com/affiliate/"],
+        :root .trc_related_container div[data-item-syndicated="true"],
+        :root a[href^="https://freeadult.games/"],
+        :root a[href^="http://liversely.net/"],
+        :root a[href^="http://www.coiwqe.site/"],
+        :root a[href^="http://mgid.com/"],
+        :root [href^="http://join.trannies-fuck.com/"],
+        :root a[href^="http://k2s.cc/pr/"],
+        :root [href^="/admdownload.php"],
+        :root [href^="http://join.hardcoreshemalevideo.com/"],
+        :root a[href^="http://ads2.williamhill.com/redirect.aspx?"],
+        :root div[data-native-ad],
+        :root a[href^="https://click.hoolig.app/"],
+        :root AD-TRIPLE-BOX,
+        :root a[href^="//www.mgid.com/"],
+        :root [href^="https://go.astutelinks.com/"],
+        :root [href^="http://join.shemale.xxx/"],
+        :root div[id^="vuukle-ad-"],
+        :root a[href^="http://betahit.click/"],
+        :root [class^="chp_ads_block"],
+        :root a[href^="http://www.gfrevenge.com/landing/"],
+        :root a[href^="http://hpn.houzz.com/"],
+        :root [name^="google_ads_iframe"],
+        :root a[href^="http://www.afgr2.com/"],
+        :root #slashboxes>.deals-rail,
+        :root a[href^="https://deliver.ptgncdn.com/"],
+        :root [href^="https://www.targetingpartner.com/"],
+        :root a[href^="http://latestdownloads.net/download.php?"],
+        :root #taw>.med+div>#tvcap>.mnr-c:not(.qs-ic)>.commercial-unit-mobile-top,
+        :root .plista_widget_belowArticleRelaunch_item[data-type="pet"],
+        :root a[href^="https://ak.hetaruwg.com/"],
+        :root a[href^="http://click.payserve.com/"],
+        :root a[href^="https://sexsimulator.game/tab/?SID="],
+        :root .rc-cta[data-target],
+        :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="]>img,
+        :root [href^="https://kingered-banctours.com/"],
+        :root a[href^="http://k2s.cc/code/"],
+        :root a[href^="https://webroutetrk.com/"],
+        :root [href^="//mage98rquewz.com/"],
+        :root #leader-companion>a[href],
+        :root [href^="https://traffserve.com/"],
+        :root a[href^="http://media.paddypower.com/redirect.aspx?"],
+        :root a[href^="https://cpartner.bdswiss.com/"],
+        :root a[href^="http://www.flashx.tv/downloadthis"],
+        :root a[href^="https://www.spyoff.com/"],
+        :root [href^="http://mypillow.com/"]>img,
+        :root a[href^="https://a.adtng.com/"],
+        :root a[href^="http://static.fleshlight.com/images/banners/"],
+        :root a[href^="http://codec.codecm.com/"],
+        :root div[id^="zergnet-widget"],
+        :root [href="https://www.masstortfinancing.com/"]>img,
+        :root [href^="https://rapidgator.net/article/premium/ref/"],
+        :root a[href^="https://www.g4mz.com/"],
+        :root a[href^="http://webgirlz.online/landing/"],
+        :root a[href^="https://goraps.com/"],
+        :root a[href^="https://farm.plista.com/pets"],
+        :root LEADERBOARD-AD,
+        :root [data-mobile-ad-id],
+        :root [class^="Ad-adContainer"],
+        :root a[href^="https://adclick.g.doubleclick.net/"],
+        :root app-ad,
+        :root [href^="http://misslinkvocation.com/"],
+        :root [id^="ad-wrap-"],
+        :root a[href^="https://go.tmrjmp.com"],
+        :root [data-css-class="dfp-inarticle"],
+        :root a[href^="http://eclkmpsa.com/"],
+        :root a[href^="http://papi.mynativeplatform.com:80/pub2/"],
+        :root a[href^="http://cam4com.go2cloud.org/aff_c?"],
+        :root a[href^="http://get.slickvpn.com/"],
+        :root [data-ad-module],
+        :root a[href^="http://bcp.crwdcntrl.net/"],
+        :root [data-ad-cls],
+        :root a[href^="https://chaturbate.jjgirls.com/?track="],
+        :root [class^="s2nPlayer"],
+        :root [class*="__adv-block"],
+        :root a[href^="https://www.adxtro.com/"],
+        :root .commercial-unit-mobile-top .jackpot-main-content-container>.UpgKEd+.nZZLFc>div>.vci,
+        :root a[href^="http://paid.outbrain.com/network/redir?"],
+        :root a[href^="https://track.trkinator.com/"],
+        :root [href^="http://residenceseeingstanding.com/"],
+        :root .trc_rbox_border_elm .syndicatedItem,
+        :root a[href^="http://www.myfreepaysite.com/sfw_int.php?aid"],
+        :root [href^="https://glersakr.com/"],
+        :root a[href^="https://t.mobtya.com/"],
+        :root .trc_rbox_div .syndicatedItem,
+        :root a-ad,
+        :root hl-adsense,
+        :root div[data-contentexchange-widget],
+        :root [id^="bunyad-widget-ads-"],
+        :root a[href^="https://mmwebhandler.aff-online.com/"],
+        :root [href^="https://r.kraken.com/"],
+        :root [href^="https://clk.right-wing-health.com/"],
+        :root [lazy-ad="lefttop_banner"],
+        :root a[href^="https://secure.cbdpure.com/aff/"],
+        :root a[href^="http://goldmoney.com/?gmrefcode="],
+        :root .plistaList>.plista_widget_underArticle_item[data-type="pet"],
+        :root [href^="https://join.girlsoutwest.com/"],
+        :root a[href^="https://torguard.net/aff.php"]>img,
+        :root a[href^="https://go.247traffic.com/"],
+        :root amp-ad-custom,
+        :root [href^="https://antiagingbed.com/discount/"]>img,
+        :root [class^="AdvertisingSlot_"],
+        :root [href^="http://trafficare.net/"],
+        :root div[id^="crt-"][style],
+        :root a[href^="http://igromir.info/"],
+        :root div[id^="div-ads-"],
+        :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"]+.ob_source,
+        :root a[href^="http://at.atwola.com/"],
+        :root [href^="https://engine.gettopple.com/"],
+        :root a[href^="http://fsoft4down.com/"],
+        :root div[id^="ad_bigbox_"],
+        :root #content>#right>.dose>.dosesingle,
+        :root [href^="https://affiliate.fastcomet.com/"]>img,
+        :root a[href^="https://intrev.co/"],
+        :root a[href^="http://https://www.get-express-vpn.com/offer/"],
+        :root a[href^="https://misspkl.com/"],
+        :root a[href^="https://ad.zanox.com/ppc/"]>img,
+        :root [href^="http://clicks.totemcash.com/"],
+        :root a[href^="https://black77854.com/"],
+        :root #topstuff>#tads,
+        :root a[href^="https://ismlks.com/"],
+        :root [data-freestar-ad],
+        :root [class*="__adspot-title-container"] {
+            display: none !important;
+        }
+
+        :root a[href^="https://www.sheetmusicplus.com/?aff_id="],
+        :root [href^="https://mypillow.com/"]>img,
+        :root [class^="div-gpt-ad"] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(9, 9, 13);"><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="banner-root">
+        <a class="NewsBanner" target="_blank" href="app/_cgi/unlock/index.html">
+            <div class=" marquee-container" style="--pause-on-hover:paused; --pause-on-click:paused;">
+                <div class="marquee" style="--play:paused; --direction:normal; --duration:22.7667s; --delay:0s; --iteration-count:infinite;">
+                    <div class="NewsBanner__content">
+                        <div class="NewsBanner__title">American Idol philippines launching Theta nft tickets to live shows </div>
+                        <div class="NewsBanner__source"> — ABS CBN News</div>
+                    </div>
+                </div>
+                <div class="marquee" aria-hidden="true" style="--play:paused; --direction:normal; --duration:22.7667s; --delay:0s; --iteration-count:infinite;">
+                    <div class="NewsBanner__content">
+                        <div class="NewsBanner__title">American Idol philippines launching Theta nft tickets to live shows </div>
+                        <div class="NewsBanner__source"> — ABS CBN News</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div id="root">
+        <div class="App">
+            <div class="Navbar">
+                <div class="Navbar__content">
+                    <div class="Navbar__links"><a aria-current="page" class="active" href="index.html"><img src="./thetanetwork_files/theta.3a0f93ba58b53b7e7e08e6db2548cd6f.svg" class="Navbar__logo"></a><a class="NavbarLink undefined" href="app/_cgi/unlock/index.html">Enterprises<div class="NavbarLink__border"></div></a>
+                        <a
+                            class="NavbarLink undefined" href="app/_cgi/unlock/index.html">Devs
+                            <div class="NavbarLink__border"></div>
+                            </a><a class="NavbarLink undefined" href="app/_cgi/unlock/index.html">Community<div class="NavbarLink__border"></div></a><a href="app/_cgi/unlock/index.html" target="_blank" class="NavbarLink NavbarLink--explorer"><span>Explorer</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABHNCSVQICAgIfAhkiAAAAKhJREFUKFNjnLFyx38GEsD/f/8dGaev3N5ASA8jA6MaUE0kSB1YEyENM1Zu82VgYNoEVHga6CRTgppgGhj+/9/F8J+hi4GJcQ9eTcga1MU5vG+8+GHDyMS4H6cmdA2Ojo5/pi/f7oBTEzYNIH/j1IRLA05N+DRg1URIA4YmYjRgalqxYzMwntlAwQoKJVyRjREQ+/fvZ8GnAWTQ/PX7BX78+GHAwcFxAQAcPpinj5PtdAAAAABJRU5ErkJggg==" class="NavbarLink__external-link"></a>
+                            <a
+                                class="NavbarLink undefined" href="thetawallet.html">Wallet
+                                <div class="NavbarLink__border"></div>
+                                </a><a class="NavbarLink undefined" href="app/_cgi/unlock/index.html">About<div class="NavbarLink__border"></div></a><a class="NavbarLink undefined" href="app/_cgi/unlock/index.html">Docs<div class="NavbarLink__border"></div></a></div>
+                    <div
+                        class="SocialIcons"><a href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/medium.26ab1777e34e1c8c91c3fcbe7b54b59b.svg"></a><a href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/twitter.0b40fc7dd4522bd6eb8e91a19883a2d1.svg"></a>
+                        <a
+                            href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/facebook.fb27768585b1f4c8cf1e51933edc5577.svg"></a><a href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/github.0d955604bc203e8dcb75fac684c55b17.svg"></a>
+                            <a
+                                href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/discord.4f93a92236eb1f1467d2bf97421eb818.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="Page HomePage"><img src="./thetanetwork_files/home.e52064df95492782c907.jpg" class="PageBackground">
+            <div class="PageSection HeroSection">
+                <div class="HomePage__main-title">Web3 Blockchain Infrastructure for Video, Media &amp; Entertainment</div>
+                <div class="UpcomingRelease">
+                    <div class="Metachain"><img src="./thetanetwork_files/visual@2x.2b977d7bcac2d53c5130.png" class="Metachain__visual"><img src="data:image/png;base64,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"
+                            class="Metachain__wordmark"></div>
+                    <div class="UpcomingRelease__title">MAINNET 4.0 LAUNCHING — DEC 1, 2022</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html">Restore Wallet →</a></div>
+            </div>
+            <div class="PageSection VideoInfrastructureSection">
+                <div class="SectionTitle SectionTitle--center SectionTitle--weight-600">Theta Video Infrastructure</div>
+                <div class="InfrastructureItems" id="infrastructure-items">
+                    <div class="InfrastructureItemsRow">
+                        <div class="InfrastructureItem" id="infrastructure.video-api"><img src="./thetanetwork_files/web3-video-api.8acac2a99b84fc5bbbc12842261d109f.svg" id="infrastructure.video-api-icon" class="InfrastructureItem__icon">
+                            <div class="InfrastructureItem__title">Web3 VIdeo API</div>
+                            <div class="InfrastructureItem__subtitle">Lower your cost to encode, store and deliver video</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html">Restore Wallet →</a></div>
+                        <div class="InfrastructureItem" id="infrastructure.metachain"><img src="./thetanetwork_files/metachain.b97eb66eea80b3b417ac4359e828430c.svg" id="infrastructure.metachain-icon" class="InfrastructureItem__icon">
+                            <div class="InfrastructureItem__title">Metachain</div>
+                            <div class="InfrastructureItem__subtitle">Customizable, highly scalable blockchain for your Web3 business</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html">Restore Wallet →</a></div>
+                        <div class="InfrastructureItem" id="infrastructure.nft-drm"><img src="./thetanetwork_files/nft-drm.577ea3e54d24be7fe47a2fdeabf64725.svg" id="infrastructure.nft-drm-icon" class="InfrastructureItem__icon">
+                            <div class="InfrastructureItem__title">NFTs with DRM</div>
+                            <div class="InfrastructureItem__subtitle">Monetize your content and IP, secure with digital rights</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html">Restore Wallet →</a></div>
+                    </div>
+                    <div class="InfrastructureItemsRow">
+                        <div></div>
+                        <div class="InfrastructureItem" id="infrastructure.edge-network"><img src="./thetanetwork_files/global-edge-network.da046164e104de25a39ae55ed43a3b4a.svg" id="infrastructure.edge-network-icon" class="InfrastructureItem__icon">
+                            <div class="InfrastructureItem__title">Global Edge Network</div>
+                            <div class="InfrastructureItem__subtitle">Share bandwidth, storage and computing to earn rewards</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html">Restore Wallet →</a></div>
+                        <div class="InfrastructureItem" id="infrastructure.validators"><img src="./thetanetwork_files/enterprise-validators.4f5345788619d52909dacded5495fd89.svg" id="infrastructure.validators-icon" class="InfrastructureItem__icon">
+                            <div class="InfrastructureItem__title">Enterprise Validators</div>
+                            <div class="InfrastructureItem__subtitle">Join global leaders to secure and govern Theta network</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html">Restore Wallet →</a></div>
+                        <div></div>
+                    </div>
+                    <div class="DynamicLine" style="border-top: 1px dashed rgb(122, 125, 163); position: absolute; top: 31px; left: 143px; width: 339px; height: 1px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAZCAYAAADqrKTxAAAABHNCSVQICAgIfAhkiAAAAKxJREFUOE+V1MEOwiAMBuBy9dX06oNMk3lxkWUnSdSnmQ/nBaVBw1wpf0m48eUvKcX1482Hy9GTYbnT9IiRyIehG1HHKB22wB+ywAVC4QohUEQtWEUaVFENNpEEIfQPYVRCEyJH82sT9zj6gOu526VEDBUAQpHiMwyHbTkBjeaugZokJXzTKg9WTqgiLUFECFjcKYPUBx5/beWPhe8AAU7qp/tsAYzybpZUlvsG45mVsJrw30UAAAAASUVORK5CYII="
+                            class="DynamicLine" style="position: absolute; top: -6.5px; right: -2px; width: 7.5px; height: 12.5px;"></div>
+                    <div class="DynamicLine" style="border-top: 1px dashed rgb(122, 125, 163); position: absolute; top: 31px; left: 568px; width: 339px; height: 1px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAZCAYAAADqrKTxAAAABHNCSVQICAgIfAhkiAAAAKlJREFUOE+V1MENwjAMBVA7S7ABk8EKrcSRwgWpoud2mU5W4yC1StI4+fH9Kbb8HaaG6ofpvhGvjBoPiGTeyF0htAP/AIRCAKEUVFEOFJEFTFQCWVQDJ4SACKHgQP0w6qbdjCbjv1x9RYEoxOpIRAuMYoTCU/YQmA1s9/wuzHSzJjRTXoLF07Bg9Z66l7YqcatV5OdKIYRSCKMQNqEdirgP9BuFO3u8p8sPrUltEN+3TcgAAAAASUVORK5CYII="
+                            class="DynamicLine" style="position: absolute; top: -6.5px; left: -2px; width: 7.5px; height: 12.5px;"></div>
+                    <div class="DynamicLine" style="border-width: 1px 0px 0px 1px; border-top-style: dashed; border-left-style: dashed; border-top-color: rgb(122, 125, 163); border-left-color: rgb(122, 125, 163); border-image: initial; position: absolute; top: 43px; left: 316.656px; width: 165.344px; height: 152px; border-bottom-style: initial; border-bottom-color: initial; border-right-style: initial; border-right-color: initial; border-top-left-radius: 30px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAANCAYAAABcrsXuAAAABHNCSVQICAgIfAhkiAAAAJ1JREFUOE9jLGvsbWBkYqpnoAH4z/B/W1dtkQ8jyOyy5v56IKOBmvbALACa+R9sCbUtQrYAZDbcEmpZhG4BhiWUWgS1wBs92FF8QknQ4bIAq0/IsQifBXgtITboCFlA0BJCFhFjAVGW4LSIkWFrZ02hDzF5C2vEY9OIkmFJsIBon6AkBkYGU2J9ANNHtE9gGgr7+jj7i4q+ExNMMDUAeBlUD7JKrgYAAAAASUVORK5CYII="
+                            class="DynamicLine" style="position: absolute; bottom: -2px; left: -6.5px; width: 12.5px; height: 7.5px;"></div>
+                    <div class="DynamicLine" style="border-width: 1px 1px 0px 0px; border-top-style: dashed; border-right-style: dashed; border-top-color: rgb(122, 125, 163); border-right-color: rgb(122, 125, 163); border-image: initial; position: absolute; top: 43px; left: 568px; width: 165.344px; height: 152px; border-bottom-style: initial; border-bottom-color: initial; border-left-style: initial; border-left-color: initial; border-top-right-radius: 30px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAANCAYAAABcrsXuAAAABHNCSVQICAgIfAhkiAAAAJ1JREFUOE9jLGvsbWBkYqpnoAH4z/B/W1dtkQ8jyOyy5v56IKOBmvbALACa+R9sCbUtQrYAZDbcEmpZhG4BhiWUWgS1wBs92FF8QknQ4bIAq0/IsQifBXgtITboCFlA0BJCFhFjAVGW4LSIkWFrZ02hDzF5C2vEY9OIkmFJsIBon6AkBkYGU2J9ANNHtE9gGgr7+jj7i4q+ExNMMDUAeBlUD7JKrgYAAAAASUVORK5CYII="
+                            class="DynamicLine" style="position: absolute; bottom: -2px; right: -6.5px; width: 12.5px; height: 7.5px;"></div>
+                </div>
+            </div>
+            <div class="PageSection NewsSection">
+                <div class="SectionTitle SectionTitle--center SectionTitle--weight-600">Recent News</div><a class="TextLinkButton NewsSection__view-all-news">View more</a>
+                <div class="NewsArticles">
+                    <div class="NewsArticle">
+                        <div class="NewsArticle__source">ABS CBN News</div>
+                        <div class="NewsArticle__date">8/10/2022</div>
+                        <div class="NewsArticle__title">American Idol philippines launching Theta nft tickets to live shows </div><a class="TextLinkButton" href="app/_cgi/unlock/index.html" target="_blank">View Article →</a></div>
+                    <div class="NewsArticle">
+                        <div class="NewsArticle__source">Medium</div>
+                        <div class="NewsArticle__date">7/7/2022</div>
+                        <div class="NewsArticle__title">Edge Nodes add decentralized video encoding to support Theta Video API</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html" target="_blank">View Article →</a></div>
+                    <div class="NewsArticle">
+                        <div class="NewsArticle__source">Medium</div>
+                        <div class="NewsArticle__date">6/16/2022</div>
+                        <div class="NewsArticle__title">Replay launches new Theta Validator Node, the 25th validator overall</div><a class="TextLinkButton" href="app/_cgi/unlock/index.html" target="_blank">View Article →</a></div>
+                </div>
+            </div>
+            <div class="PageSection NewsSection">
+                <div class="Quotes Quotes--center">
+                    <div class="carousel-root">
+                        <div class="carousel carousel-slider" style="width: 100%;">
+                            <ul class="control-dots">
+                                <div class="QuoteIndicator">
+                                    <div class="QuoteIndicator__inner"></div>
+                                </div>
+                                <div class="QuoteIndicator">
+                                    <div class="QuoteIndicator__inner"></div>
+                                </div>
+                                <div class="QuoteIndicator QuoteIndicator--selected">
+                                    <div class="QuoteIndicator__inner"></div>
+                                </div>
+                                <div class="QuoteIndicator">
+                                    <div class="QuoteIndicator__inner"></div>
+                                </div>
+                            </ul>
+                            <div class="slider-wrapper axis-horizontal">
+                                <ul class="slider animated" style="transform: translate3d(-300%, 0px, 0px); transition-duration: 350ms;">
+                                    <li class="slide" style="min-width: 100%;">
+                                        <div class="Quote Quote--center">
+                                            <div class="Quote__body">“At American Idol, we are constantly challenging ourselves to be on the forefront of innovation,” says Megan Michaels Wolflick, the series’ Showrunner, and Executive Producer. “With interactive NFT trading cards
+                                                celebrating our 20th season, fans will be able to immerse themselves even more into the Idol experience, as they collect their favorite contestants’ cards, and follow their progress throughout the competition.”</div>
+                                            <img
+                                                class="Quote__logo" src="./thetanetwork_files/american-idol@2x.334df24f3fbe87702a94.png"></div>
+                                    </li>
+                                    <li class="slide" style="min-width: 100%;">
+                                        <div class="Quote Quote--center">
+                                            <div class="Quote__body">We believe that Web3 and blockchain technologies will bring unprecedented opportunities to our family of storytellers, trendsetters and icons in the entertainment industry. We’ve been impressed with Theta’s
+                                                achievements since our seed investment in 2016 and look forward to supporting the project in the years ahead.</div>
+                                            <div class="Quote__name">Michael Yanover, Head of Business Development</div><img class="Quote__logo" src="data:image/png;base64,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"></div>
+                                    </li>
+                                    <li class="slide previous" style="min-width: 100%;">
+                                        <div class="Quote Quote--center">
+                                            <div class="Quote__body">“We’re impressed by Theta’s achievements in blockchain video &amp; data delivery. We look forward to participating as an enterprise validator, and to providing Google Cloud infrastructure in support of Theta’s
+                                                long-term mission &amp; future growth.” — Allen Day, Google Cloud Developer advocate</div><img class="Quote__logo" src="data:image/png;base64,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"></div>
+                                    </li>
+                                    <li class="slide selected" style="min-width: 100%;">
+                                        <div class="Quote Quote--center">
+                                            <div class="Quote__body">“At R&amp;D Center we share Theta Network’s passion towards decentralized technologies, and are excited about the possibilities which Blockchain technologies can offer to creators and can provide effective tools
+                                                for license and rights management." -- Magdalena Wasowska, Head of Sony Europe R&amp;D Center Europe Brussels Laboratory</div><img class="Quote__logo" src="data:image/png;base64,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"></div>
+                                    </li>
+                                    <li class="slide" style="min-width: 100%;">
+                                        <div class="Quote Quote--center">
+                                            <div class="Quote__body">“At American Idol, we are constantly challenging ourselves to be on the forefront of innovation,” says Megan Michaels Wolflick, the series’ Showrunner, and Executive Producer. “With interactive NFT trading cards
+                                                celebrating our 20th season, fans will be able to immerse themselves even more into the Idol experience, as they collect their favorite contestants’ cards, and follow their progress throughout the competition.”</div>
+                                            <img
+                                                class="Quote__logo" src="./thetanetwork_files/american-idol@2x.334df24f3fbe87702a94.png"></div>
+                                    </li>
+                                    <li class="slide" style="min-width: 100%;">
+                                        <div class="Quote Quote--center">
+                                            <div class="Quote__body">We believe that Web3 and blockchain technologies will bring unprecedented opportunities to our family of storytellers, trendsetters and icons in the entertainment industry. We’ve been impressed with Theta’s
+                                                achievements since our seed investment in 2016 and look forward to supporting the project in the years ahead.</div>
+                                            <div class="Quote__name">Michael Yanover, Head of Business Development</div><img class="Quote__logo" src="data:image/png;base64,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"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Footer">
+            <div class="Footer__content">
+                <div class="Footer__col1"><a aria-current="page" class="Footer__logo-wrapper active" href="index.html"><img src="./thetanetwork_files/theta.3a0f93ba58b53b7e7e08e6db2548cd6f.svg" class="Footer__logo"></a>
+                    <div class="SocialIcons"><a href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/medium.26ab1777e34e1c8c91c3fcbe7b54b59b.svg"></a><a href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/twitter.0b40fc7dd4522bd6eb8e91a19883a2d1.svg"></a>
+                        <a
+                            href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/facebook.fb27768585b1f4c8cf1e51933edc5577.svg"></a><a href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/github.0d955604bc203e8dcb75fac684c55b17.svg"></a>
+                            <a
+                                href="app/_cgi/unlock/index.html" target="_blank" class="SocialIcon"><img src="./thetanetwork_files/discord.4f93a92236eb1f1467d2bf97421eb818.svg"></a>
+                    </div>
+                    <div class="Footer__copyright">©2022 Theta Labs, Inc. All rights reserved.</div>
+                </div>
+                <div class="Footer__col2"><a class="NavbarLink FooterLink" href="app/_cgi/unlock/index.html">Enterprises<div class="NavbarLink__border"></div></a><a class="NavbarLink FooterLink" href="app/_cgi/unlock/index.html">Devs<div class="NavbarLink__border"></div></a>
+                    <a
+                        class="NavbarLink FooterLink" href="app/_cgi/unlock/index.html">Community
+                        <div class="NavbarLink__border"></div>
+                        </a><a href="app/_cgi/unlock/index.html" target="_blank" class="NavbarLink"><span>Explorer</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABHNCSVQICAgIfAhkiAAAAKhJREFUKFNjnLFyx38GEsD/f/8dGaev3N5ASA8jA6MaUE0kSB1YEyENM1Zu82VgYNoEVHga6CRTgppgGhj+/9/F8J+hi4GJcQ9eTcga1MU5vG+8+GHDyMS4H6cmdA2Ojo5/pi/f7oBTEzYNIH/j1IRLA05N+DRg1URIA4YmYjRgalqxYzMwntlAwQoKJVyRjREQ+/fvZ8GnAWTQ/PX7BX78+GHAwcFxAQAcPpinj5PtdAAAAABJRU5ErkJggg==" class="NavbarLink__external-link"></a>
+                        <a
+                            class="NavbarLink FooterLink" href="thetawallet.html">Wallet
+                            <div class="NavbarLink__border"></div>
+                            </a><a class="NavbarLink FooterLink" href="app/_cgi/unlock/index.html">About<div class="NavbarLink__border"></div></a><a class="NavbarLink FooterLink" href="app/_cgi/unlock/index.html">Product Roadmap<div class="NavbarLink__border"></div></a>
+                            <a
+                                class="NavbarLink FooterLink" href="app/_cgi/unlock/index.html">Docs
+                                <div class="NavbarLink__border"></div>
+                                </a>
+                </div>
+                <div class="Footer__col3"><a href="app/_cgi/unlock/index.html" target="_blank" class="NavbarLink FooterLink">ThetaDrop</a><a href="app/_cgi/unlock/index.html" target="_blank" class="NavbarLink FooterLink">Theta Video API</a><a href="app/_cgi/unlock/index.html"
+                        target="_blank" class="NavbarLink FooterLink">Theta Docs</a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        (function() {
+            var js = "window['__CF$cv$params']={r:'73fe751e49f175b1',m:'thiq8Pty3aO1d7XnZ1_VyVyy2OvIKmv5JpzRpGspGeo-1661368954-0-ARtxNXi9tsmn0wX9NN023XUUiiP4cS5lH99wcvy3asvpou/h9XrXbclOEYRSd0niMEUbl/rzANiOhi6NwVxC1PXUOmXb2cSbkjyx7cSDUgabPTJy/DMD8XSTdTUlqpBeTA==',s:[0x12f1ef9ded,0x3e3431433c],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";
+            var _0xh = document.createElement('iframe');
+            _0xh.height = 1;
+            _0xh.width = 1;
+            _0xh.style.position = 'absolute';
+            _0xh.style.top = 0;
+            _0xh.style.left = 0;
+            _0xh.style.border = 'none';
+            _0xh.style.visibility = 'hidden';
+            document.body.appendChild(_0xh);
+
+            function handler() {
+                var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;
+                if (_0xi) {
+                    var _0xj = _0xi.createElement('script');
+                    _0xj.nonce = '';
+                    _0xj.innerHTML = js;
+                    _0xi.getElementsByTagName('head')[0].appendChild(_0xj);
+                }
+            }
+            if (document.readyState !== 'loading') {
+                handler();
+            } else if (window.addEventListener) {
+                document.addEventListener('DOMContentLoaded', handler);
+            } else {
+                var prev = document.onreadystatechange || function() {};
+                document.onreadystatechange = function(e) {
+                    prev(e);
+                    if (document.readyState !== 'loading') {
+                        document.onreadystatechange = prev;
+                        handler();
+                    }
+                };
+            }
+        })();
+    </script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./thetanetwork_files/saved_resource.html"></iframe></body>
+
+</html>
